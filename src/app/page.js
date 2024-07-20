@@ -6,7 +6,7 @@ import Footer from "@/app/components/Footer";
 import Temp from "./components/Temp";
 import Humid from "./components/Humid";
 import AirQuality from "./components/AirQuality";
-import LineChart from "@/app/components/linechart";
+import LineChart from "./components/LineChart";
 import mqtt from "../mqtt";
 import { useEffect, useState } from "react";
 
