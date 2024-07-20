@@ -49,7 +49,7 @@ const BarChart = () => {
   return (
     <div className="w-full h-fit bg-[#151515] mx-2 mb-2 md:p-7 p-2 rounded-md">
       <div className="text-white text-center flex items-center justify-center mb-4">
-        Sales Bar Chart
+        Chart 3
       </div>
       <div style={{ width: "100%", height: "400px" }}>
         <ResponsiveContainer width="100%" height="100%">

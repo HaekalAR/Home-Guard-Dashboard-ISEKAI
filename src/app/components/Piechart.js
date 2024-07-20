@@ -66,7 +66,7 @@ const Piechart = () => {
   return (
     <div className="w-full h-fit bg-[#151515] mx-2 mb-2 md:p-7 p-2 rounded-md">
       <div className="text-white text-center flex items-center justify-center mb-4">
-        Piechart
+        Chart 2
       </div>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
