@@ -11,7 +11,7 @@ import {
   Tooltip,
 } from "recharts";
 
-const Linechart = ({ datas, time, type, color }) => {
+const AreaCharts = ({ datas, time, type, color }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -68,4 +68,4 @@ const Linechart = ({ datas, time, type, color }) => {
   );
 };
 
-export default Linechart;
+export default AreaCharts;
