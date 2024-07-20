@@ -6,7 +6,7 @@ import Footer from "@/app/components/Footer";
 import Temp from "./components/Temp";
 import Humid from "./components/Humid";
 import AirQuality from "./components/AirQuality";
-import PredictChart from "@/app/components/linechart";
+import LineChart from "@/app/components/linechart";
 import mqtt from "../mqtt";
 import { useEffect, useState } from "react";
 
@@ -116,7 +116,7 @@ export default function Home() {
             />
 
             {tempPrediction ? (
-              <PredictChart
+              <LineChart
                 datas={tempPrediction}
                 time={NextTenMin}
                 type={"Temperature"}
@@ -127,7 +127,7 @@ export default function Home() {
             )}
 
             {humidPrediction ? (
-              <PredictChart
+              <LineChart
                 datas={humidPrediction}
                 time={NextTenMin}
                 type={"Humidity"}
@@ -138,7 +138,7 @@ export default function Home() {
             )}
 
             {airqualityPrediction ? (
-              <PredictChart
+              <LineChart
                 datas={airqualityPrediction}
                 time={NextTenMin}
                 type={"AirQuality"}
