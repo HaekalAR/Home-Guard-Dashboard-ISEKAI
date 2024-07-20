@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import {
+  Area,
+  AreaChart,
   CartesianGrid,
-  Line,
-  LineChart,
   XAxis,
+  YAxis,
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
@@ -14,7 +15,8 @@ const Linechart = ({ datas, time, type, color }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const newDataPoint = { time: time, [type]: datas };
+    const now = new Date();
+    const newDataPoint = { time: now.toLocaleTimeString(), [type]: datas };
     setData((prevData) => {
       const updatedData = [...prevData, newDataPoint];
 
@@ -29,11 +31,11 @@ const Linechart = ({ datas, time, type, color }) => {
   return (
     <div className="w-full h-fit bg-[#151515] mx-2 mb-2 md:p-7 p-2 rounded-md">
       <div className="text-white text-center flex items-center justify-center mb-4">
-        Predict {type} 10{">"} min
+        {type}
       </div>
       <div style={{ width: "100%", height: "400px" }}>
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart
+          <AreaChart
             accessibilityLayer
             data={data}
             margin={{
@@ -50,15 +52,16 @@ const Linechart = ({ datas, time, type, color }) => {
               axisLine={false}
               tickMargin={8}
             />
-            <Tooltip />
-            <Line
-              dataKey={type}
-              type="monotone"
-              stroke={color}
-              strokeWidth={2}
-              dot={false}
+            <YAxis
+              tickLine={false}
+              axisLine={false}
+              tickMargin={1}
+              tickCount={3}
             />
-          </LineChart>
+            <Tooltip />
+            {/* <Line type="monotone" dataKey={type} stroke="#8884d8" /> */}
+            <Area dataKey={type} type="monotone" fill={color} stroke={color} />
+          </AreaChart>
         </ResponsiveContainer>
       </div>
     </div>
