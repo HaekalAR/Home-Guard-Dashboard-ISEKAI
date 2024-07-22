@@ -1,5 +1,6 @@
 "use client";
 import Navbar from "@/app/components/Navbar";
+import Isekai from "@/app/components/Isekai";
 import TopNav from "@/app/components/TopNav";
 import AreaCharts from "@/app/components/AreaChart";
 import Footer from "@/app/components/Footer";
@@ -87,9 +88,9 @@ export default function Home() {
     <div className="bg-[#101010] overflow-hidden w-full">
       <div className="md:flex">
         <Navbar />
-        <div className="md:w-[84.8%] w-full min-h-screen flex flex-col">
+        <div className="md:w-[84.8%] w-full min-h-screen flex flex-col ">
           <TopNav isConnected={connected} />
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-2 mr-4 text-white">
+          <div className="grid md:grid-cols-3 grid-cols-1 mr-4 gap-x-2 text-white ">
             <Temp temp={temp} />
             <Humid humid={humid} />
             <AirQuality aq={airquality} />
@@ -123,7 +124,9 @@ export default function Home() {
                 color={"#8884d8"}
               />
             ) : (
-              <p>For now, prediction temperature data is unavailable.</p>
+              <p className="px-4 ">
+                For now, prediction temperature data is unavailable.
+              </p>
             )}
 
             {humidPrediction ? (
@@ -134,7 +137,9 @@ export default function Home() {
                 color={"#e23670"}
               />
             ) : (
-              <p>For now, prediction humidity data is unavailable.</p>
+              <p className="px-4">
+                For now, prediction humidity data is unavailable.
+              </p>
             )}
 
             {airqualityPrediction ? (
@@ -145,7 +150,9 @@ export default function Home() {
                 color={"#8884d8"}
               />
             ) : (
-              <p>For now, prediction air quality data is unavailable.</p>
+              <p className="px-4">
+                For now, prediction air quality data is unavailable.
+              </p>
             )}
           </div>
 
